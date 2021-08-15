@@ -2,25 +2,21 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import firebase from "firebase";
+import { firebaseConfig } from "./config/firebase.config";
+import { useAuthState } from "react-firebase-hooks/auth";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDhTGx9dL0AMkoRO4FxyuR52yfHOXtDTr0",
-  authDomain: "firebasics-f12b2.firebaseapp.com",
-  projectId: "firebasics-f12b2",
-  storageBucket: "firebasics-f12b2.appspot.com",
-  messagingSenderId: "700695226634",
-  appId: "1:700695226634:web:8f3c83a24f1a2459a2b2f3",
-  measurementId: "G-TCDPQDXBKY",
-};
-firebase.initializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+} else {
+  firebase.app(); // if already initialized, use that one
+}
+
+function SomeRandomThing() {
+  return <Text>This is random text!</Text>;
+}
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>What ama i doiong with ym leif</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  return <View style={styles.container}>{}</View>;
 }
 
 const styles = StyleSheet.create({
