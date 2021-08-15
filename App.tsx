@@ -17,7 +17,7 @@ firebase.initializeApp(firebaseConfig);
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Text>What ama i doiong with ym leif</Text>
       <StatusBar style="auto" />
     </View>
   );
